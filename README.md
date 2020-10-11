@@ -20,3 +20,9 @@ yarn add -D typescript ts-node nodemon
 yarn add -D @types/koa @types/koa-router
 
 ```
+
+### 配置 eslint ts
+
+```bash
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
