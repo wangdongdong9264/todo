@@ -9,3 +9,14 @@
 5. vue test
 6. docker
 7. github actions
+
+## start
+
+### 安装koa typescrpt 依赖
+
+```bash
+yarn add koa koa-router
+yarn add -D typescript ts-node nodemon
+yarn add -D @types/koa @types/koa-router
+
+```
