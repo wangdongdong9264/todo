@@ -1,2 +1,5 @@
 # build
 server-build/
+
+# config
+jest.config.js

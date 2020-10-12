@@ -26,3 +26,11 @@ yarn add -D @types/koa @types/koa-router
 ```bash
 yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
+
+### 配置 jest ts
+
+```bash
+
+yarn  add -D jest ts-jest
+
+```

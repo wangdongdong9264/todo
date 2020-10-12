@@ -4,7 +4,7 @@
   "description": "todo list",
   "main": "/server/index.ts",
   "scripts": {
-    "test": "yarn test",
+    "test": "jest",
     "dev": "nodemon",
     "build:node": "tsc",
     "server": "node server-build/index.js"
@@ -31,7 +31,9 @@
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.11.0",
+    "jest": "^26.5.3",
     "nodemon": "^2.0.4",
+    "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   }
