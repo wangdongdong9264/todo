@@ -34,3 +34,47 @@ yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 yarn  add -D jest ts-jest
 
 ```
+
+### mongodb
+
+安装 mongodb
+
+```sh
+
+yarn add mongodb
+
+```
+
+连接数据库
+
+```sh
+
+# --dbpath 设置数据存放目录
+# --logpath 设置日志存放目录
+# --fork 在后台运行
+mongod --dbpath /Users/wangdongdong/Downloads/mongodb/db --logpath /Users/wangdongdong/Downloads/mongodb/log/mongo.log --fork
+
+```
+
+mac默认配置`/usr/local/etc/mongod.conf`
+
+```yml
+systemLog:
+  destination: file
+  path: /Users/wangdongdong/Downloads/mongodb/log/mongo.log
+  logAppend: true
+storage:
+  dbPath: /Users/wangdongdong/Downloads/mongodb/db
+net:
+  bindIp: 127.0.0.1
+security:
+  authorization: enabled
+
+```
+
+更改 mongod 的启动配置
+
+```sh
+mongod --config /Users/wangdongdong/Downloads/mongodb/config/mongod.conf
+
+```
