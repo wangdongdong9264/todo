@@ -1,12 +1,15 @@
 import Koa from 'koa'
 import Router from 'koa-router'
-// import * as Koa from 'koa';
-// import * as Router from 'koa-router';
+
+import db from './models/db'
 
 const app = new Koa()
 const router = new Router()
 
 router.get('/', async (ctx) => {
+  const data = await db.instance.find('user')
+  console.log(data)
+  
   ctx.body = 'hello world'
 })
 

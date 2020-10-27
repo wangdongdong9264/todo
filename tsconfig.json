@@ -13,7 +13,12 @@
       "*": [
         "node_modules/*"
       ]
-    } // 模块名到基于 baseUrl的路径映射的列表
+    }, // 模块名到基于 baseUrl的路径映射的列表
+    "types" : [
+      "koa",
+      "koa-router",
+      "mongodb"
+    ]
   },
   "include": [
     "./server/**/*"
