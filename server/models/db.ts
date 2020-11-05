@@ -15,19 +15,19 @@ class DB {
   dbClient: Db
   static instance: DB
 
-  static getInstance () {
+  static getInstance() {
     if (!DB.instance) {
       DB.instance = new DB()
     }
     return DB
   }
 
-  constructor () {
+  constructor() {
     this.dbClient = null
     this.connect().catch(console.dir)
   }
 
-  connect ():Promise<Db> {
+  connect(): Promise<Db> {
     return new Promise((resolve, reject) => {
       if (!this.dbClient) {
         const client = new MongoClient(uri)
@@ -45,10 +45,10 @@ class DB {
     })
   }
 
-  find (collectionName:string) {
+  find(collectionName: string) {
     // 查询
     return new Promise((resolve, reject) => {
-      this.connect().then(( res:Db ) => {
+      this.connect().then((res: Db) => {
         const result = res.collection(collectionName).find({})
         result.toArray((err, docs) => {
           if (err) {
@@ -61,25 +61,29 @@ class DB {
     })
   }
 
-  update <T, U>(collectionName:string, json:T, json2: U) {
+  update<T, U>(collectionName: string, json: T, json2: U) {
     return new Promise((resolve, reject) => {
-      this.connect().then((res:Db) => {
-        res.collection(collectionName).updateOne(json, {
-          $set: json2
-        }, (err, result) => {
-          if (err) {
-            reject(err)
-            return
+      this.connect().then((res: Db) => {
+        res.collection(collectionName).updateOne(
+          json,
+          {
+            $set: json2
+          },
+          (err, result) => {
+            if (err) {
+              reject(err)
+              return
+            }
+            resolve(result)
           }
-          resolve(result)
-        })
+        )
       })
     })
   }
 
-  insert <T>(collectionName:string, json:T) {
+  insert<T>(collectionName: string, json: T) {
     return new Promise((resolve, reject) => {
-      this.connect().then((res:Db) => {
+      this.connect().then((res: Db) => {
         res.collection(collectionName).insertOne(json, (err, result) => {
           if (err) {
             reject(err)
@@ -91,9 +95,9 @@ class DB {
     })
   }
 
-  remove <T>(collectionName:string, json:T) {
+  remove<T>(collectionName: string, json: T) {
     return new Promise((resolve, reject) => {
-      this.connect().then((res:Db) => {
+      this.connect().then((res: Db) => {
         res.collection(collectionName).deleteOne(json, (err, result) => {
           if (err) {
             reject(err)
@@ -105,22 +109,21 @@ class DB {
     })
   }
 
-  getObjectId (id: string | number | ObjectId) {
+  getObjectId(id: string | number | ObjectId) {
     return new ObjectID(id)
-  } 
-  
-  count <T>(collectionName:string, json:T) {
+  }
+
+  count<T>(collectionName: string, json: T) {
     // 查询数量
     return new Promise((resolve) => {
-      this.connect().then((res:Db) => {
+      this.connect().then((res: Db) => {
         const result = res.collection(collectionName).countDocuments(json)
-        result.then(count => {
+        result.then((count) => {
           resolve(count)
         })
       })
     })
   }
-  
 }
 
 export = DB.getInstance()
