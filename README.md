@@ -78,3 +78,17 @@ security:
 mongod --config /Users/wangdongdong/Downloads/mongodb/config/mongod.conf
 
 ```
+
+列表设置
+
+```json
+{
+  "title":"代办标题",
+  "desc":"详情",
+  "startDate": "创建时间", // 2020-11-09
+  "endDate": "结束时间", // 2020-11-09
+  "complete": true, // 代办完成?
+}
+```
+
+## which means

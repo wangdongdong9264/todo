@@ -18,7 +18,8 @@
       "koa",
       "koa-router",
       "mongodb",
-      "jest"
+      "jest",
+      "koa-bodyparser"
     ]
   },
   "include": [
