@@ -3,3 +3,6 @@ server-build/
 
 # config
 jest.config.js
+
+# client
+client/
