@@ -91,4 +91,13 @@ mongod --config /Users/wangdongdong/Downloads/mongodb/config/mongod.conf
 }
 ```
 
+客户端 使用 ant Pro
+
+```shell script
+yarn create umi
+# 简化命令 1. 全局安装umi或更新umi到最新 2. 执行包package.json中bin指向的程序 并转发参数
+# yarn global add umi
+# umi
+```
+
 ## which means
